@@ -92,15 +92,15 @@ while (true) {
         }
         // console.log("completionTimes===============》: " + completionTimes);
         click(521, 1272);
-        sleep(500);
+        sleep(700);
         click(784, 1529);
-        sleep(850);
+        sleep(1000);
         click(702, 1344);
         sleep(150);
     } else if (testSecondPage()) {
         // console.log("testSecondPage===============》: ");
         click(784, 1529);
-        sleep(850);
+        sleep(1000);
         click(702, 1344);
         sleep(150);
     } else if (testThreePage()) {

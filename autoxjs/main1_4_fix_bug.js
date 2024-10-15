@@ -17,12 +17,12 @@ if (!requestScreenCapture()) {
 
 // 获取屏幕截图
 var screen = captureScreen();
-// 定义保存路径
-var filePath = "/sdcard/$MuMu12Shared/Pictures/screenshot.png"; // 将图片保存到手机存储的根目录
+// // 定义保存路径
+// var filePath = "/sdcard/$MuMu12Shared/Pictures/screenshot.png"; // 将图片保存到手机存储的根目录
 
-// 保存截图为 PNG 文件
-images.save(screen, filePath, "png");
-log("截图已保存到 " + filePath);
+// // 保存截图为 PNG 文件
+// images.save(screen, filePath, "png");
+// log("截图已保存到 " + filePath);
 
 // 定义要匹配的多个点及其颜色（x, y, color）
 var points1 = [

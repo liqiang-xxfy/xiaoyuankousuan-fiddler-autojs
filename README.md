@@ -53,12 +53,12 @@
  - AutoX.js点击开始按钮重复答题
 
 
+![fiddler-everywhere抓包替换js](./mp4/fiddler_20241015181548.png)
+
 
 ## 演示视频 :movie_camera:
 https://github.com/user-attachments/assets/e908d25e-6fb8-479e-b72f-d22b2fad7782
 
-
-![fiddler-everywhere抓包替换js](./mp4/fiddler_20241015181548.png)
 
 
 ## 注意

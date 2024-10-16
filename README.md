@@ -19,7 +19,7 @@
 
 ## 思路
 
- - 使用fiddler-everywhere抓包，正则匹配到PK页面的js文件的请求
+ - 使用抓包，正则匹配到PK页面的js文件的请求
    
         ^https:\/\/leo\.fbcontent\.cn\/bh5\/leo-web-oral-pk\/exercise_.*\.js$
 

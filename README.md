@@ -50,8 +50,6 @@
     *注意修改后要清除小猿口算APP缓存
 
 
- - AutoX.js点击开始按钮重复答题
-
 
 ![fiddler-everywhere抓包替换js](./mp4/fiddler_20241015181548.png)
 

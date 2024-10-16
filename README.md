@@ -24,6 +24,7 @@
         ^https:\/\/leo\.fbcontent\.cn\/bh5\/leo-web-oral-pk\/exercise_.*\.js$
 
  - 修改请求响应体中的js文件，实现取消过渡动画、修改答题时间0.001秒等（项目里有写好导出的.farx文件）
+ 
   ```javascript
 //取消PK准备动画：
      "readyGoEnd"\)\}\),.{1,4}\)\}\),.{1,4}\)\}\),.{1,4}\)\}\) 正则替换为 "readyGoEnd")}),20)}),20)}),20)})

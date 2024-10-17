@@ -21,7 +21,7 @@
 
  - 使用抓包，正则匹配到PK页面的js文件的请求
    
-        ^https:\/\/leo\.fbcontent\.cn\/bh5\/leo-web-oral-pk\/exercise_.*\.js$
+       ^https:\/\/leo\.fbcontent\.cn\/bh5\/leo-web-oral-pk\/exercise_.*\.js$
 
  - 使用正则替换请求响应体中的js内容，实现取消过渡动画、修改答题时间0.001秒等（项目里有写好导出的.farx文件）
  

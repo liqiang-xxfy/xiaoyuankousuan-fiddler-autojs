@@ -30,6 +30,12 @@
       case 0:if(.{0,14})\.challengeCode(.{200,300})([a-zA-Z]{1,2})\("startExercise"\); 正则替换为 case 0:$3("startExercise");if$1.challengeCode$2
       "readyGoEnd"\)\}\),.{1,4}\)\}\),.{1,4}\)\}\),.{1,4}\)\}\) 正则替换为 "readyGoEnd")}),20)}),20)}),20)})
 
+//好友挑战PK修改时间为0.001：
+       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode  正则替换为  correctCnt:$1,costTime:$4.challengeCode?1:$2,updatedTime:$3$4.challengeCode
+
+//所有PK场次修改时间为0.001
+       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode   正则替换为  correctCnt:$1,costTime:1,updatedTime:$3$4.challengeCode
+
 //判断任何答案正确：
       return .{3,5}\)\?1:0\}, 正则替换为 return 1},
 
@@ -38,12 +44,6 @@
 
 //直接判断所有答题完成：
       \.value\+1>=[a-zA-Z]{1,2}\.value\.length\?([a-zA-Z]{1,2})\("finishExercise"\) 正则替换为 .value+1>=0?$1("finishExercise")
-
-//好友挑战PK修改时间为0.001：
-       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode  正则替换为  correctCnt:$1,costTime:$4.challengeCode?1:$2,updatedTime:$3$4.challengeCode
-
-//所有PK场次修改时间为0.001
-       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode   正则替换为  correctCnt:$1,costTime:1,updatedTime:$3$4.challengeCode
 
  ```
 

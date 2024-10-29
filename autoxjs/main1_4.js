@@ -18,7 +18,7 @@ if (!requestScreenCapture()) {
 // 获取屏幕截图
 var screen = captureScreen();
 // // 定义保存路径
-// var filePath = "/sdcard/$MuMu12Shared/Pictures/screenshot.png"; // 将图片保存到手机存储的根目录
+// var filePath = "/sdcard/$MuMu12Shared/Pictures/screenshot.png"; // 将图片保存到手机存储的根目录111
 
 // // 保存截图为 PNG 文件
 // images.save(screen, filePath, "png");
@@ -30,7 +30,7 @@ var points1 = [
     { x: 589, y: 1269, color: "#ffffd840" }, //
     { x: 551, y: 1328, color: "#ffffbc11" }, //
 ];
-// 定义要匹配的多个点及其颜色（x, y, color） 629|1347|00385E,672|1348|4ADAFB,629|1403|530F1E
+// 定义要匹配的多个点及其颜色（x, y, color） 629|1347|00385E,672|1348|4ADAFB,629|1403|530F1E222
 var points2 = [
     { x: 802, y: 1526, color: "#ffffd728" }, //
     { x: 688, y: 1527, color: "#ff5e3b22" }, //

@@ -26,7 +26,7 @@ var screen = captureScreen();
 
 // 定义要匹配的多个点及其颜色（x, y, color）
 var points1 = [
-    { x: 521, y: 1272, color: "#ff543122" }, //
+    { x: 521, y: 1272, color: "#ff543122" }, //333
     { x: 589, y: 1269, color: "#ffffd840" }, //
     { x: 551, y: 1328, color: "#ffffbc11" }, //
 ];

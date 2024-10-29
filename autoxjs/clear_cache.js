@@ -7,6 +7,7 @@ log("设备高度: " + height);
 
 // 使用autojs的shell方法执行adb命令
 function clearAppCache(packageName) {
+    // var cachePath = "/data/data/" + packageName + "/cache/*";
     var cachePath = "/data/data/" + packageName + "/cache/WebView/*";
     var command = "rm -rf " + cachePath;
 

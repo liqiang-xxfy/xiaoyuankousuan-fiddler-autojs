@@ -81,30 +81,58 @@ function testErrorPage() {
         return colors.isSimilar(point.color, actualColor, threshold);
     });
 }
+
 while (true) {
     screen.recycle(); // 使用完毕后，手动释放图片资源
     screen = captureScreen();
     // 你的脚本逻辑
     if (testFirstPage()) {
         completionTimes++;
-        if (completionTimes % 5 === 0) {
-            log("completionTimes: " + completionTimes);
-        }
+        log("次数: " + completionTimes + "   运行中...... ");
         // console.log("completionTimes===============》: " + completionTimes);
+        //点击开心收下
         click(521, 1272);
         sleep(700);
+
+        //点击排名继续
         click(784, 1529);
-        sleep(1000);
+        sleep(500);
+
+        //摸摸头
+        click(616, 1095);
+        sleep(50);
+        click(495, 1095);
+        // sleep(50);
+        // click(616, 1095);
+        // sleep(50);
+        // click(495, 1095);
+        sleep(2000);
+
+        //点击继续PK
         click(702, 1344);
         sleep(150);
     } else if (testSecondPage()) {
         // console.log("testSecondPage===============》: ");
+        //点击排名继续
         click(784, 1529);
-        sleep(1000);
+        sleep(500);
+
+        //摸摸头
+        click(616, 1095);
+        sleep(50);
+        click(495, 1095);
+        // sleep(50);
+        // click(616, 1095);
+        // sleep(50);
+        // click(495, 1095);
+        sleep(2000);
+
+        //点击继续PK
         click(702, 1344);
         sleep(150);
     } else if (testThreePage()) {
         // console.log("testThreePage===============》: ");
+        //点击继续PK
         click(702, 1344);
         sleep(150);
     } else if (testErrorPage()) {

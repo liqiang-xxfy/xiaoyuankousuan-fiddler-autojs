@@ -1,7 +1,7 @@
 
 ##### 小猿口算自动PK刷题，该项目仅供娱乐
 
-  -  2024-10-15 23:00 可正常使用
+  -  2024-10-16 23:00 可正常使用
 
 
 ## 功能
@@ -19,16 +19,22 @@
 
 ## 思路
 
- - 使用fiddler-everywhere抓包，正则匹配到PK页面的js文件的请求
+ - 使用抓包，正则匹配到PK页面的js文件的请求
    
-        ^https:\/\/leo\.fbcontent\.cn\/bh5\/leo-web-oral-pk\/exercise_.*\.js$
+       ^https:\/\/leo\.fbcontent\.cn\/bh5\/leo-web-oral-pk\/exercise_.*\.js$
 
- - 修改请求响应体中的js文件，实现取消过渡动画、修改答题时间0.001秒等（项目里有写好导出的.farx文件）
+ - 使用正则替换请求响应体中的js内容，实现取消过渡动画、修改答题时间0.001秒等（项目里有写好导出的.farx文件）
  
   ```javascript
-//取消PK准备动画：
-     "readyGoEnd"\)\}\),.{1,4}\)\}\),.{1,4}\)\}\),.{1,4}\)\}\) 正则替换为 "readyGoEnd")}),20)}),20)}),20)})
+//取消匹配动画、readyGo动画：
       case 0:if(.{0,14})\.challengeCode(.{200,300})([a-zA-Z]{1,2})\("startExercise"\); 正则替换为 case 0:$3("startExercise");if$1.challengeCode$2
+      "readyGoEnd"\)\}\),.{1,4}\)\}\),.{1,4}\)\}\),.{1,4}\)\}\) 正则替换为 "readyGoEnd")}),20)}),20)}),20)})
+
+//好友挑战PK修改时间为0.001：
+       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode  正则替换为  correctCnt:$1,costTime:$4.challengeCode?1:$2,updatedTime:$3$4.challengeCode
+
+//所有PK场次修改时间为0.001
+       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode   正则替换为  correctCnt:$1,costTime:1,updatedTime:$3$4.challengeCode
 
 //判断任何答案正确：
       return .{3,5}\)\?1:0\}, 正则替换为 return 1},
@@ -39,26 +45,18 @@
 //直接判断所有答题完成：
       \.value\+1>=[a-zA-Z]{1,2}\.value\.length\?([a-zA-Z]{1,2})\("finishExercise"\) 正则替换为 .value+1>=0?$1("finishExercise")
 
-//好友挑战PK修改时间为0.001：
-       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode  正则替换为  correctCnt:$1,costTime:$4.challengeCode?1:$2,updatedTime:$3$4.challengeCode
-
-//所有PK场次修改时间为0.001
-       correctCnt:(.{1,5}),costTime:(.{1,15}),updatedTime:(.{1,120})([a-zA-Z]{1,2})\.challengeCode   正则替换为  correctCnt:$1,costTime:1,updatedTime:$3$4.challengeCode
-
  ```
 
-    *注意修改后要清除小猿口算APP缓存
+    *注意修改后要清除小猿口算APP缓存才会生效
 
 
- - AutoX.js点击开始按钮重复答题
 
+![fiddler-everywhere抓包替换js](./mp4/fiddler_20241015181548.png)
 
 
 ## 演示视频 :movie_camera:
 https://github.com/user-attachments/assets/e908d25e-6fb8-479e-b72f-d22b2fad7782
 
-
-![fiddler-everywhere抓包替换js](./mp4/fiddler_20241015181548.png)
 
 
 ## 注意
